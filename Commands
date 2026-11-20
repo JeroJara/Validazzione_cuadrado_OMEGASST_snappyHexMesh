@@ -1,0 +1,5 @@
+#!/bin/sh
+
+surfaceTransformPoints "scale=(0.001 0.001 0.001)" constant/geometry/prisma_mm.stl constant/geometry/prisma.stl
+surfaceTransformPoints "Rz=-22.5" constant/geometry/prisma_orig.stl constant/geometry/prisma.stl
+#------------------------------------------------------------------------------

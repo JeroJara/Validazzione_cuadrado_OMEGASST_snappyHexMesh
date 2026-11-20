@@ -1,0 +1,71 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+kInlet             3.375;                  
+
+//0.023438, Intensidad en articulo es de menos de 0,8%, k = 1.5*(Uinf*I)^2, asumiendo I = 6%
+
+dimensions      [0 2 -2 0 0 0 0]; //no está registrada turbulentKineticenergy así que se ponen las unidades de k
+
+internalField   uniform $kInlet;
+
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform $kInlet;
+    }
+
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform $kInlet;
+    }
+
+    cubo
+    {
+        type            kqRWallFunction;
+        value           uniform $kInlet;
+    }
+
+    upbot
+    {
+        type slip;
+    }
+
+    front
+    {
+        type            empty;
+    }
+
+    back
+    {
+        type            empty;
+    }
+}
+
+//    front
+//    {
+//        type slip;
+//    }
+//    back
+//    {
+//        type slip;
+//    }
+
+
+// ************************************************************************* //

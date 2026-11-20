@@ -1,0 +1,28 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      functions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// include packaged functionObjects using #includeFunc
+// #includeFunc
+#includeFunc forceCoeffs
+
+#includeFunc yPlus(name=yPlus,writeControl=writeTime)
+//#includeFunc patchFlowRate(name=inletFlowRate, patch=inlet)
+//#includeFunc patchFlowRate(name=outletFlowRate, patch=outlet)
+//#includeFunc fieldAverage(U, p, prime2Mean = yes)
+//#includeFunc residuals(name=residuals, fields=(U p k omega))
+//#includeFunc Q
+//#includeFunc wallShearStress(writeControl=writeTime,patch=prisma)
+// ************************************************************************* //

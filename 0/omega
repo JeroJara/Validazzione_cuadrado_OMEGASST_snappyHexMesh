@@ -1,0 +1,71 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// I = 0,06
+omegaInlet       47.916;          
+
+//6.7146 omega se calcula como sqrt(k)/(Cmu^(1/4)*l), y con k=3.375 m2/s2, Cmu^(1/4)=0.55 y l=0.07 m resulta omegaInlet = 47.9hz
+
+dimensions      [0 0 -1 0 0 0 0]; //no poner turbulentomega sino las uunidades de omega
+
+internalField   uniform $omegaInlet;
+
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform $omegaInlet;
+    }
+
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform $omegaInlet;
+    }
+
+    cubo
+    {
+        type            omegaWallFunction;
+        value           uniform $omegaInlet;
+    }
+
+    upbot
+    {
+        type slip;
+    }
+    front
+    {
+        type            empty;
+    }
+
+    back
+    {
+        type            empty;
+    }
+}
+
+//    front
+//    {
+//        type slip;
+//    }
+//    back
+//    {
+//        type slip;
+//    }
+
+
+
+// ************************************************************************* //

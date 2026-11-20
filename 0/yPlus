@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      yPlus;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    inlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    outlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    upbot
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    front
+    {
+        type            empty;
+    }
+    back
+    {
+        type            empty;
+    }
+    cubo
+    {
+        type            calculated;
+        value           nonuniform List<scalar> 
+192
+(6DбъT^@6DбъT^@6DбъT^@УCбъT^@РCбъT^@і3УZ@6DбъT^@’CбъT^@6DбъT^@’CбъT^@’CбъT^@6DбъT^@§AбъT^@’CбъT^@ЪDбъT^@’CбъT^@KBбъT^@ќ—qУZ@’CбъT^@СCбъT^@УCбъT^@6DбъT^@~EбъT^@УCбъT^@СCбъT^@~EбъT^@6DбъT^@’CбъT^@ЪDбъT^@’CбъT^@’CбъT^@ЕFбъT^@оBбъT^@KBбъT^@KBбъT^@6DбъT^@6DбъT^@ЪDбъT^@ЪDбъT^@УCбъT^@СCбъT^@§AбъT^@оBбъT^@СCбъT^@СCбъT^@тtжd^@оBбъT^@6DбъT^@ЪDбъT^@’CбъT^@!FбъT^@~EбъT^@~EбъT^@KBбъT^@ЪDбъT^@оBбъT^@’CбъT^@ПtAИd^@6DбъT^@СCбъT^@УCбъT^@~EбъT^@ЕFбъT^@РCбъT^@РCбъT^@6DбъT^@’CбъT^@KBбъT^@’CбъT^@оBбъT^@6DбъT^@6DбъT^@~EбъT^@6DбъT^@6DбъT^@ЪDбъT^@§AбъT^@’CбъT^@ЪDбъT^@СCбъT^@УCбъT^@щCбъT^@РCбъT^@СCбъT^@DбъT^@6DбъT^@~EбъT^@~EбъT^@РCбъT^@РCбъT^@і3УZ@¤PКnУZ@оBбъT^@ЪDбъT^@оBбъT^@’CбъT^@ЪDбъT^@ЛOКnУZ@~¶Ч3УZ@§AбъT^@~EбъT^@’CбъT^@’CбъT^@6DбъT^@’CбъT^@ќ—qУZ@Ж·Ч3УZ@’CбъT^@РCбъT^@СCбъT^@єDбъT^@УCбъT^@оBбъT^@6DбъT^@6DбъT^@~EбъT^@СCбъT^@УCбъT^@YEбъT^@6DбъT^@KBбъT^@’CбъT^@KBбъT^@ЪDбъT^@6DбъT^@УCбъT^@§AбъT^@оBбъT^@ЕFбъT^@6DбъT^@6DбъT^@’CбъT^@’CбъT^@6DбъT^@6DбъT^@’CбъT^@СCбъT^@СCбъT^@СCбъT^@DбъT^@~EбъT^@§AбъT^@6DбъT^@~EбъT^@СCбъT^@СCбъT^@	CFAИd^@тtжd^@6DбъT^@6DбъT^@6DбъT^@оBбъT^@~EбъT^@шBFAИd^@hҐuжd^@оBбъT^@6DбъT^@оBбъT^@6DбъT^@оBбъT^@оBбъT^@!¤uжd^@+tAИd^@оBбъT^@РCбъT^@СCбъT^@чCбъT^@ыCбъT^@6DбъT^@§AбъT^@~EбъT^@оBбъT^@СCбъT^@СCбъT^@єDбъT^@’CбъT^@6DбъT^@’CбъT^@~EбъT^@KBбъT^@ЪDбъT^@РCбъT^@~EбъT^@~EбъT^@6DбъT^@~EбъT^@ЪDбъT^@оBбъT^@оBбъT^@ЕFбъT^@’CбъT^@KBбъT^@);
+    }
+}
+
+
+// ************************************************************************* //
